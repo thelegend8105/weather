@@ -3,17 +3,27 @@
 <head>
     <title>hello</title>
     <link rel="stylesheet" href="/style">
+    <script>
+        window.addEventListener("load", () => {
+            fetch("/weather", {
+                method: "get"
+            }).then(response => {
+                response.json().then(data => {
+                    document.getElementById("weathermain").innerHTML = data.weather[0].main;
+                    document.getElementById("weatherdescription").innerHTML = data.weather[0].description;
+                    if (data.weather[0].main === "Clouds") {
+                        document.getElementById("weathericon").src = "./animated/cloudy-2-day.svg";
+                    }
+                })
+            })
+        })
+    </script>
 </head>
 
 <body>
-    <nav class="topbar">
-        <span>My Website</span>
-        <a href="/">Home</a>
-        <a href="/about">about me</a>
-        <a href="/weather">About our weather..</a>
-    </nav>
-    Hi my name is rogiht and i am studying in presidency
-    <marquee>woohoo</marquee>
+    <h1 id="weathermain"></h1>
+    <p id="weatherdescription"></p>
+    <img id="weathericon" src = "./animated/clear-day.svg"></img>
 </body>
 
 </html>
