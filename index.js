@@ -18,4 +18,5 @@ app.get('/weather', (req, res) => {
         res.send(err);
     })
 })
+app.use("/animated", express.static("animated"));
 app.listen(3000, () => console.log("Started Express server"));
