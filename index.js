@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
 app.get('/style', (req, res) => {
     res.sendFile(path.join(__dirname, "/style.css"));
 })
+
+app.get('/data', (req, res) => {
+    res.sendFile(path.join(__dirname, "/clientScript.js"));
+})
 app.get('/weather', (req, res) => {
     weather.getWeather().then(data => {
         res.json(data);
@@ -18,5 +22,6 @@ app.get('/weather', (req, res) => {
         res.send(err);
     })
 })
-app.use("/animated", express.static("animated"));
+app.use("/assets", express.static("assets"));
+
 app.listen(3000, () => console.log("Started Express server"));

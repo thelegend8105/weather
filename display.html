@@ -1,29 +1,19 @@
 <html>
 
 <head>
-    <title>hello</title>
+    <title>Weather</title>
     <link rel="stylesheet" href="/style">
-    <script>
-        window.addEventListener("load", () => {
-            fetch("/weather", {
-                method: "get"
-            }).then(response => {
-                response.json().then(data => {
-                    document.getElementById("weathermain").innerHTML = data.weather[0].main;
-                    document.getElementById("weatherdescription").innerHTML = data.weather[0].description;
-                    if (data.weather[0].main === "Clouds") {
-                        document.getElementById("weathericon").src = "./animated/cloudy-2-day.svg";
-                    }
-                })
-            })
-        })
-    </script>
+    <script src="/data"></script>
 </head>
 
-<body>
-    <h1 id="weathermain"></h1>
-    <p id="weatherdescription"></p>
-    <img id="weathericon" src = "./animated/clear-day.svg"></img>
+<body id="body">
+    <div class="row">
+        <img id="weathericon" src="./assets/icons/clear-day.svg" class="icon"></img>
+        <div class="column">
+            <h1 id="weathermain"></h1>
+            <p id="weatherdescription"></p>
+        </div>
+    </div>
 </body>
 
 </html>
