@@ -13,13 +13,19 @@ const updateDocument = (headingText, descriptionText, iconSource = "", className
     }
     document.body.className = className;
 }
+const updateTemp = (temperatureText) => {
+    const temperature = document.getElementById("maintemp");
+    temperature.innerText = temperatureText;
+}
 
 const parseWeather = data => {
     const weatherCode = data.weather[0].id;
+    updateTemp(data.main.temp);
     switch (true) {
         case weatherCode >= 200 && weatherCode < 300:
             {
                 updateDocument("Thunderstorms", "Final Boss", "/assets/icons/thunderstorms.svg", "thunderstorms");
+                console.log(temperature);
                 break;
             }
         case weatherCode >= 300 && weatherCode < 400:
@@ -83,12 +89,13 @@ const parseWeather = data => {
             }
         case weatherCode >= 801 && weatherCode < 900:
             {
-                updateDocument("Clouds", "\"Misfortune\"", "/assets/icons/cloudy-1-day.svg", "clouds");
+                updateDocument("Clouds", "Weather still looking alrighty...", "/assets/icons/cloudy-1-day.svg", "clouds");
+
                 break;
             }
         default:
             {
-                updateDocument("Weather unavailable :(", "No quests available.", "", "unavailable");
+                updateDocument("Weather unavailable :(", "No quests available.", "", "unavailable", "0.0");
                 break;
             }
     }

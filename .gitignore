@@ -128,3 +128,6 @@ dist
 
 # configuration file
 /config.json
+
+# random regex might be useful for learning
+/regex.txt

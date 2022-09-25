@@ -27,7 +27,7 @@ body {
     height: 100%;
 }
 /*thunderstorms*/
-.clouds {
+.thunderstorms {
     background-image: linear-gradient(180deg,
             rgb(46, 46, 46)25%,
             rgb(85, 85, 85)60%,
@@ -39,17 +39,17 @@ body {
     background-image: linear-gradient(rgba(57, 171, 202, 0.753)55%, rgba(255, 255, 255, 0.747));
 }
 
-.thunderstorms {
+.clouds {
     background-image: linear-gradient(200deg,
-            rgb(3, 66, 85) 25%,
-            rgb(14, 96, 115) 50%,
-            rgb(25, 126, 145) 75%,
-            rgb(36, 156, 175) 100%);
+            rgb(85, 212, 255) 25%,
+            rgb(140, 234, 255) 50%,
+            rgb(182, 239, 252) 75%,
+            rgb(211, 248, 255) 100%);
 }
 
 .icon {
-    width: 464px;
-    height: 464px;
+    width: 512px;
+    height: 512px;
 }
 
 .row {
@@ -63,7 +63,8 @@ body {
 }
 
 #weathermain,
-#weatherdescription {
+#weatherdescription,
+#maintemp {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 36px;
 }
